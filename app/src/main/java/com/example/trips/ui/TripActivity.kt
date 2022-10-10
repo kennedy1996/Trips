@@ -1,11 +1,8 @@
 package com.example.trips.ui
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,7 +28,7 @@ class TripActivity : AppCompatActivity() {
 
         viewModel.search()
 
-        val button = findViewById<Button>(R.id.button_test)
+        val button = findViewById<Button>(R.id.activity_trip_update)
         button.setOnClickListener {
             viewModel.search()
         }

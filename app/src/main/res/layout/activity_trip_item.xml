@@ -24,7 +24,7 @@
             <ImageView
                 android:id="@+id/activity_trip_item_image"
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="5dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -36,43 +36,87 @@
                 tools:srcCompat="@android:drawable/sym_def_app_icon" />
 
             <TextView
-                android:id="@+id/activity_trip_item_data_duration"
+                android:id="@+id/activity_trip_item_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="10/10/2022 - 19hrs 20m "
                 android:textSize="15dp"
-                app:layout_constraintEnd_toEndOf="@+id/activity_trip_item_trip"
-                app:layout_constraintStart_toStartOf="@+id/activity_trip_item_trip"
-                app:layout_constraintTop_toBottomOf="@+id/activity_trip_item_trip"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/activity_trip_item_trip_to"
+                app:layout_constraintStart_toEndOf="@+id/activity_trip_item_trip_from"
+                app:layout_constraintTop_toBottomOf="@+id/activity_trip_item_date"
+                app:layout_constraintVertical_bias="0.5"
+                tools:text="19hrs 20m" />
+
+            <TextView
+                android:id="@+id/activity_trip_item_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/activity_trip_item_trip_from"
+                app:layout_constraintEnd_toEndOf="@+id/activity_trip_item_image"
+                app:layout_constraintStart_toStartOf="@+id/activity_trip_item_image"
+                app:layout_constraintTop_toTopOf="@+id/activity_trip_item_trip_from"
+                app:layout_constraintVertical_bias="0.25"
+                tools:text="20/10/2022" />
 
 
             <TextView
-                android:id="@+id/activity_trip_item_trip"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:id="@+id/activity_trip_item_trip_from"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="sans-serif-smallcaps"
                 android:gravity="center"
+                android:lineSpacingExtra="8sp"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/activity_trip_item_date"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/activity_trip_item_image"
-                tools:text="Spain to Vienna" />
+                tools:text="from \nSpain" />
 
             <TextView
-                android:id="@+id/balcao_finalizacao_activity_item_quantidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Click Here To Know More!"
-                android:textSize="20dp"
+                android:id="@+id/activity_trip_item_trip_to"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:lineSpacingExtra="8sp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/activity_trip_item_data_duration"
-                app:layout_constraintStart_toStartOf="@+id/activity_trip_item_data_duration"
-                app:layout_constraintTop_toBottomOf="@+id/activity_trip_item_data_duration" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/activity_trip_item_date"
+                app:layout_constraintTop_toBottomOf="@+id/activity_trip_item_image"
+                tools:text="to \nVeneza" />
+
+            <Button
+                android:id="@+id/activity_trip_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#020101"
+                android:textColor="#4CAF50"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/activity_trip_item_image"
+                app:layout_constraintEnd_toEndOf="@+id/activity_trip_item_image"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/activity_trip_item_image"
+                app:layout_constraintTop_toTopOf="@+id/activity_trip_item_image"
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="499.99" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

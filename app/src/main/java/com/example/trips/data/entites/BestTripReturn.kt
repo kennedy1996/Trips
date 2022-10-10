@@ -15,7 +15,8 @@ class Trips (
     val fly_duration: String,
     val price: Int,
     val route: List<Route>,
-    val deep_link: String
+    val deep_link: String,
+    val dTime: Long
 )
 
 class CodeName(

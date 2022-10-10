@@ -7,15 +7,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import coil.imageLoader
-import coil.load
 import coil.request.ImageRequest
-import coil.transform.CircleCropTransformation
 import com.example.trips.R
+import com.example.trips.convertLongToString
 import com.example.trips.viewModel.BestTripViewModel
 import com.nostra13.universalimageloader.core.ImageLoader
 
@@ -26,13 +25,13 @@ class TripAdapter(
 
     var list = viewModel.getSearch()
 
-    private var imageLoader = ImageLoader.getInstance()
-
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         var image: ImageView = itemView.findViewById(R.id.activity_trip_item_image)
-        var trip: TextView = itemView.findViewById(R.id.activity_trip_item_trip)
-        var dataDuration: TextView = itemView.findViewById(R.id.activity_trip_item_data_duration)
+        var trip_from: TextView = itemView.findViewById(R.id.activity_trip_item_trip_from)
+        var duration: TextView = itemView.findViewById(R.id.activity_trip_item_duration)
+        var price: Button = itemView.findViewById(R.id.activity_trip_item_price)
+        var trip_to: TextView = itemView.findViewById(R.id.activity_trip_item_trip_to)
+        var date: TextView = itemView.findViewById(R.id.activity_trip_item_date)
     }
 
     override fun onCreateViewHolder(
@@ -47,14 +46,17 @@ class TripAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         try {
-            holder.dataDuration.text = list?.value?.get(position)?.id
-
             val cityFrom = list?.value?.get(position)?.cityFrom
             val contryFrom = list?.value?.get(position)?.countryFrom!!.name
             val cityTo = list?.value?.get(position)?.cityTo
             val contryTo = list?.value?.get(position)?.countryTo!!.name
 
-            holder.trip.text = "$cityFrom/$contryFrom to $cityTo/$contryTo"
+            holder.duration.text = list?.value?.get(position)?.fly_duration
+            holder.trip_from.text = "from\n$cityFrom\n$contryFrom"
+            holder.trip_to.text = "to\n$cityTo\n$contryTo"
+            holder.price.text = list?.value?.get(position)?.price.toString()
+            holder.date.text = convertLongToString(list?.value?.get(position)?.dTime!!  )
+
 
             loadingImage(position, holder)
             onItemClickAccessKiwiSite(holder, position)

@@ -7,12 +7,14 @@
     tools:context=".ui.TripActivity">
 
     <Button
-        android:id="@+id/button_test"
+        android:id="@+id/activity_trip_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click Here to Find Best Flights!"
+        android:layout_marginEnd="10dp"
+        android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -26,7 +28,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_test"
+        app:layout_constraintTop_toBottomOf="@+id/activity_trip_update"
         tools:listitem="@layout/activity_trip_item" />
+
+    <TextView
+        android:id="@+id/activity_trip_text_fixed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click to select your Flight!"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_trip_update"
+        app:layout_constraintEnd_toStartOf="@+id/activity_trip_update"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/activity_trip_recyclerView"
+        app:layout_constraintTop_toTopOf="@+id/activity_trip_update" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
