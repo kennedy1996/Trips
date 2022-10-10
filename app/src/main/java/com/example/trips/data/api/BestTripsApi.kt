@@ -1,5 +1,6 @@
-package com.example.trips
+package com.example.trips.data.api
 
+import com.example.trips.BestTripReturn
 import retrofit2.http.GET
 
 interface BestTripsApi {

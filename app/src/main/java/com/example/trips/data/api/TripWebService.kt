@@ -1,6 +1,8 @@
-package com.example.trips
+package com.example.trips.data.api
 
 import android.util.Log
+import com.example.trips.BestTripData
+import com.example.trips.inicializator.InitializatorRetrofit
 
 private const val TAG = "BestTripWebService"
 

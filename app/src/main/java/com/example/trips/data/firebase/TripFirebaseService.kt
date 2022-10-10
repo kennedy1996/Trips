@@ -1,6 +1,7 @@
-package com.example.trips
+package com.example.trips.data.firebase
 
-import android.util.Log
+import com.example.trips.data.converter.DocumentConverter
+import com.example.trips.data.entites.Trip
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase

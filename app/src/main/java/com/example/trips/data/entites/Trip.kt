@@ -1,4 +1,4 @@
-package com.example.trips
+package com.example.trips.data.entites
 
 data class Trip(
     val id: String = "",

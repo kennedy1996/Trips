@@ -1,5 +1,6 @@
-package com.example.trips
+package com.example.trips.inicializator
 
+import com.example.trips.data.api.BestTripsApi
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 

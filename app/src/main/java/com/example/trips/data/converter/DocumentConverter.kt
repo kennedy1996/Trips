@@ -1,6 +1,7 @@
-package com.example.trips
+package com.example.trips.data.converter
 
 import android.util.Log
+import com.example.trips.data.entites.Trip
 
 class DocumentConverter(
     val id : String = "",

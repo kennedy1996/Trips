@@ -1,6 +1,11 @@
-package com.example.trips
+package com.example.trips.repository
 
 import androidx.lifecycle.MutableLiveData
+import com.example.trips.BestTripData
+import com.example.trips.data.entites.Trip
+import com.example.trips.data.firebase.TripFirebaseService
+import com.example.trips.data.api.TripWebService
+import com.example.trips.today
 
 class TripRepository {
     private val webClient = TripWebService()
