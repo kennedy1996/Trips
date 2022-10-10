@@ -9,15 +9,16 @@ class TripWebService {
     private val bestTripService: BestTripsApi =
         InitializatorRetrofit().bestTripApi
 
-
-    suspend fun search(){
+    suspend fun searchApi(): List<BestTripData>? {
+        var returnV: List<BestTripData>? = null
         try {
             val friendsReturn = bestTripService
                 .search()
-            Log.i("testeSearch", "search: ${friendsReturn.data.size}")
+            returnV = friendsReturn.data
 
         } catch (e: Exception) {
-            Log.e(TAG, "searchAll: ", e)
+            Log.e(TAG, "searchApi: ", e)
         }
+        return returnV
     }
 }

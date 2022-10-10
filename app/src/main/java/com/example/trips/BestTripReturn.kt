@@ -7,5 +7,9 @@ class BestTripReturn (
 )
 
 class BestTripData (
+    val id: String,
+    val flyFrom: String
+)
+class Trips (
     val id: String
 )
