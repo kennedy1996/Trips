@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/balcao_finalizacao_activity_item_pacote_cardview"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/activity_trip_item_image"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="5dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:srcCompat="@android:drawable/sym_def_app_icon" />
+
+            <TextView
+                android:id="@+id/activity_trip_item_data_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="10/10/2022 - 19hrs 20m "
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/activity_trip_item_trip"
+                app:layout_constraintStart_toStartOf="@+id/activity_trip_item_trip"
+                app:layout_constraintTop_toBottomOf="@+id/activity_trip_item_trip"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/activity_trip_item_trip"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activity_trip_item_image"
+                tools:text="Spain to Vienna" />
+
+            <TextView
+                android:id="@+id/balcao_finalizacao_activity_item_quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click Here To Know More!"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/activity_trip_item_data_duration"
+                app:layout_constraintStart_toStartOf="@+id/activity_trip_item_data_duration"
+                app:layout_constraintTop_toBottomOf="@+id/activity_trip_item_data_duration" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

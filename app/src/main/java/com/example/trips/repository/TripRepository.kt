@@ -1,7 +1,7 @@
 package com.example.trips.repository
 
 import androidx.lifecycle.MutableLiveData
-import com.example.trips.BestTripData
+import com.example.trips.Trips
 import com.example.trips.data.entites.Trip
 import com.example.trips.data.firebase.TripFirebaseService
 import com.example.trips.data.api.TripWebService
@@ -10,7 +10,7 @@ import com.example.trips.today
 class TripRepository {
     private val webClient = TripWebService()
     private val firebase = TripFirebaseService()
-    private var listTrips = mutableListOf<BestTripData>()
+    private var listTrips = mutableListOf<Trips>()
     private var listOldTrips = MutableLiveData<List<Trip>>()
 
     fun searchTripsFirebase() {
@@ -36,7 +36,7 @@ class TripRepository {
         return list
     }
 
-    suspend fun sync(): List<BestTripData> {
+    suspend fun sync(): List<Trips>? {
         val list = webClient.searchApi()
         var five = 0
         if (list != null) {
