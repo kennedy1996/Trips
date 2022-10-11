@@ -35,23 +35,15 @@ class TripRepository {
         }
         return list
     }
-
     suspend fun sync(): List<Trips>? {
         val list = webClient.searchApi()
-        var five = 0
         if (list != null) {
-            for (i in list.indices) {
+            for (i in 0 until 5) {
                 if(tripIsToday(list[i].id)){
-                    if (five < 5) {
-                        five += 1
-                    listTrips.add(list[i])
-                    }
+                        if(!listTrips.contains(list[i])) listTrips.add(list[i])
                 }else if (!tripWasYesterday(list[i].id)) {
-                    if (five < 5) {
-                        five += 1
                         firebase.sendTripToFirebase(Trip(id_trip = list[i].id, date = today()))
-                        listTrips.add(list[i])
-                    }
+                        if(!listTrips.contains(list[i])) listTrips.add(list[i])
                 }
             }
         }

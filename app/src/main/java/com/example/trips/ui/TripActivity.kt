@@ -1,6 +1,7 @@
 package com.example.trips.ui
 
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -22,17 +23,37 @@ class TripActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trip)
+        title= "See Unique Trips for you Today!"
         inicializatorFirebase(this)
         observersParaLiveData()
+        settingsFirstSearch()
+        settingsButtonUpdate()
+        settingsRecyclerView()
+        checkDataAfterTime()
+    }
+
+    private fun checkDataAfterTime() {
+        val h = Handler()
+        h.postDelayed({
+            if (viewModel.getSearch().value?.size == 0) {
+                viewModel.search()
+            }
+        }, 6000)
+    }
+
+    private fun settingsFirstSearch() {
         viewModel.searchOldTrips()
-
         viewModel.search()
+    }
 
+    private fun settingsButtonUpdate() {
         val button = findViewById<Button>(R.id.activity_trip_update)
         button.setOnClickListener {
             viewModel.search()
         }
+    }
 
+    private fun settingsRecyclerView() {
         val recyclerView: RecyclerView = findViewById(R.id.activity_trip_recyclerView)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
