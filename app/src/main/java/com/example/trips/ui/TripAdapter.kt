@@ -54,8 +54,8 @@ class TripAdapter(
             holder.duration.text = list?.value?.get(position)?.fly_duration
             holder.trip_from.text = "from\n$cityFrom\n$contryFrom"
             holder.trip_to.text = "to\n$cityTo\n$contryTo"
-            holder.price.text = list?.value?.get(position)?.price.toString()
-            holder.date.text = convertLongToString(list?.value?.get(position)?.dTime!!  )
+            holder.price.text = "€${list?.value?.get(position)?.price.toString()}"
+            holder.date.text = convertLongToString(list?.value?.get(position)?.dTime!!)
 
 
             loadingImage(position, holder)

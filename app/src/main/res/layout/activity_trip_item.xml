@@ -116,7 +116,7 @@
                 app:layout_constraintStart_toStartOf="@+id/activity_trip_item_image"
                 app:layout_constraintTop_toTopOf="@+id/activity_trip_item_image"
                 app:layout_constraintVertical_bias="1.0"
-                tools:text="499.99" />
+                tools:text="€499.99" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
